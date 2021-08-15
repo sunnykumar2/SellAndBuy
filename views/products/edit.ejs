@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center">Edit <%= product.name %></h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="product[name]" value="<%= product.name %>" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="product[image]" value="<%= product.image %>" placeholder="image url">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="product[description]" value="<%= product.description %>" placeholder="description">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="product[price]" value="<%= product.price %>" placeholder="price in dollor">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="product[mobile]" value="<%= product.mobile %>" placeholder="mobile">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="product[location]" value="<%= product.location %>" placeholder="location">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/products">Go Back</a>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>
